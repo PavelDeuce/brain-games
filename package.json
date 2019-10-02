@@ -1,11 +1,19 @@
 {
-  "name": "frontend-project-lvl1",
-  "version": "1.0.0",
+  "name": "deuce-frontend-project-lvl1",
+  "version": "1.0.1",
   "description": "",
+   "bin": {
+        "brain-games": "dist/bin/brain-games.js"
+  },
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build"
+   },
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/PavelDeuce/frontend-project-lvl1.git"
@@ -15,5 +23,11 @@
   "bugs": {
     "url": "https://github.com/PavelDeuce/frontend-project-lvl1/issues"
   },
-  "homepage": "https://github.com/PavelDeuce/frontend-project-lvl1#readme"
+  "homepage": "https://github.com/PavelDeuce/frontend-project-lvl1#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.6.2",
+    "@babel/core": "^7.6.2",
+    "@babel/node": "^7.6.2",
+    "@babel/preset-env": "^7.6.2"
+  }
 }
