@@ -3,8 +3,6 @@ import { car, cdr } from '@hexlet/pairs';
 
 const countOfRounds = 3;
 
-export const getRandomInt = (maxNumber) => Math.floor(Math.random() * Math.floor(maxNumber));
-
 export default (gameDescription, getGameData) => {
   console.log('Welcome to the Brain Games!\n');
   console.log(gameDescription);
