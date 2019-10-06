@@ -1,7 +1,14 @@
 {
-  "name": "deuce-frontend-project-lvl1",
-  "version": "1.0.2",
-  "description": "",
+  "name": "deuce-brain-games",
+  "version": "1.1.1",
+  "description": "The first hexlet project is Brain-games",
+  "keywords": [
+    "brain-games",
+    "hexlet",
+    "brain",
+    "games",
+    "PavelDeuce"
+  ],
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
     "brain-even": "dist/bin/brain-even.js",
@@ -24,7 +31,7 @@
     "type": "git",
     "url": "git+https://github.com/PavelDeuce/frontend-project-lvl1.git"
   },
-  "author": "",
+  "author": "Pavel Deryugin (PavelDeuce)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/PavelDeuce/frontend-project-lvl1/issues"
