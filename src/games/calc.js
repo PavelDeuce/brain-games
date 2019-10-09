@@ -1,9 +1,9 @@
 import { cons } from '@hexlet/pairs';
 import startGame from '..';
+import getRandomNumber from '../utils';
 
 const gameDescription = 'What is the result of the expression?';
 
-const getRandomInt = (maxNumber) => Math.floor(Math.random() * Math.floor(maxNumber));
 const operators = ['+', '-', '*'];
 
 const toCalculate = (operand1, operand2, operator) => {
@@ -20,9 +20,9 @@ const toCalculate = (operand1, operand2, operator) => {
 };
 
 const getGameData = () => {
-  const operand1 = getRandomInt(100);
-  const operand2 = getRandomInt(100);
-  const operator = operators[getRandomInt(3)];
+  const operand1 = getRandomNumber(0, 100);
+  const operand2 = getRandomNumber(0, 100);
+  const operator = operators[getRandomNumber(0, operators.length)];
   const questionGame = `${operand1} ${operator} ${operand2}`;
   const correctAnswer = toCalculate(operand1, operand2, operator).toString();
   return cons(questionGame, correctAnswer);

@@ -1,7 +1,7 @@
 import { question } from 'readline-sync';
 import { car, cdr } from '@hexlet/pairs';
 
-const countOfRounds = 3;
+const roundsCount = 3;
 
 export default (gameDescription, getGameData) => {
   console.log('Welcome to the Brain Games!\n');
@@ -11,7 +11,7 @@ export default (gameDescription, getGameData) => {
   console.log(`Hello, ${userName}\n`);
 
   const iter = (counter) => {
-    if (counter === countOfRounds) {
+    if (counter === roundsCount) {
       console.log(`Congratulations, ${userName}`);
       return;
     }
