@@ -1,4 +1,4 @@
-# frontend-project-lvl1
+# brain-games
 [![Maintainability](https://api.codeclimate.com/v1/badges/d4b683a45f74dc407b49/maintainability)](https://codeclimate.com/github/PavelDeuce/frontend-project-lvl1/maintainability)[![Build Status](https://travis-ci.org/PavelDeuce/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/PavelDeuce/frontend-project-lvl1)
 
 BrainGames install: $ npm install -g deuce-brain-games
