@@ -1,22 +1,27 @@
-import { cons } from '@hexlet/pairs';
 import startGame from '..';
 import getRandomNumber from '../utils';
 
 const gameDescription = 'Find the greatest common divisor of given numbers.';
 
 const greatestCommonDivisor = (operand1, operand2) => {
-  if (operand2 === 0) {
-    return Math.abs(operand1);
-  }
-  return greatestCommonDivisor(operand2, operand1 % operand2).toString();
+  const iter = (divisor) => (
+    ((operand1 % divisor === 0) && (operand2 % divisor === 0)) ? divisor : iter(divisor - 1)
+  );
+
+  return iter(Math.min(operand1, operand2));
 };
 
 const getGameData = () => {
   const operand1 = getRandomNumber(0, 100);
   const operand2 = getRandomNumber(0, 100);
+
   const questionGame = `${operand1} ${operand2}`;
   const correctAnswer = greatestCommonDivisor(operand1, operand2);
-  return cons(questionGame, correctAnswer);
+
+  return {
+    questionGame,
+    correctAnswer,
+  };
 };
 
 export default () => {
