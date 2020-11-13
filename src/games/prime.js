@@ -1,5 +1,5 @@
 import startGame from '..';
-import getRandomNumber from '../utils';
+import getRandomNumber, { getAnswerDependingCallback } from '../utils';
 
 const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -27,7 +27,7 @@ const isPrime = (number) => {
 
 const getGameData = () => {
   const questionGame = getRandomNumber(0, 100);
-  const correctAnswer = isPrime(questionGame) ? 'yes' : 'no';
+  const correctAnswer = getAnswerDependingCallback(isPrime, questionGame);
 
   return {
     questionGame,
