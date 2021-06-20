@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import toStartGame from '..';
+import { logCommands } from '../utils';
 
 console.log('Welcome to the Brain Games!');
-toStartGame();
+logCommands();

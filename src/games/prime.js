@@ -10,7 +10,7 @@ const isPrime = (number) => {
     return false;
   }
 
-  const iter = (divider) => {
+  const checkPrime = (divider) => {
     if (divider > limit) {
       return true;
     }
@@ -19,20 +19,17 @@ const isPrime = (number) => {
       return false;
     }
 
-    return iter(divider + 1);
+    return checkPrime(divider + 1);
   };
 
-  return iter(2);
+  return checkPrime(2);
 };
 
 const getGameData = () => {
   const questionGame = getRandomNumber(0, 100);
   const correctAnswer = getAnswerDependingCallback(isPrime, questionGame);
 
-  return {
-    questionGame,
-    correctAnswer,
-  };
+  return { questionGame, correctAnswer };
 };
 
 export default () => {

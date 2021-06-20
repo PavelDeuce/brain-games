@@ -1,5 +1,5 @@
 import startGame from '..';
-import getRandomNumber from '../utils';
+import getRandomNumber, { getUnknownNote } from '../utils';
 
 const gameDescription = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];
@@ -22,13 +22,10 @@ const getGameData = () => {
   const operand2 = getRandomNumber(0, 100);
   const operator = operators[getRandomNumber(0, operators.length - 1)];
 
-  const questionGame = `${operand1} ${operator} ${operand2}`;
+  const questionGame = `${operand1} ${operator} ${operand2} = ${getUnknownNote()}`;
   const correctAnswer = toCalculate(operand1, operand2, operator).toString();
 
-  return {
-    questionGame,
-    correctAnswer,
-  };
+  return { questionGame, correctAnswer };
 };
 
 export default () => {

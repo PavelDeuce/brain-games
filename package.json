@@ -1,6 +1,6 @@
 {
   "name": "deuce-brain-games",
-  "version": "1.1.5",
+  "version": "2.0.1",
   "description": "Brain-games for kids",
   "keywords": [
     "brain-games",
@@ -15,7 +15,9 @@
     "brain-calc": "dist/bin/brain-calc.js",
     "brain-gcd": "dist/bin/brain-gcd.js",
     "brain-prime": "dist/bin/brain-prime.js",
-    "brain-progression": "dist/bin/brain-progression.js"
+    "brain-progression": "dist/bin/brain-progression.js",
+    "brain-fibonacci": "dist/bin/brain-fibonacci.js",
+    "brain-factorial": "dist/bin/brain-factorial.js"
   },
   "main": "index.js",
   "files": [
@@ -41,12 +43,16 @@
     "@babel/cli": "^7.6.2",
     "@babel/core": "^7.6.2",
     "@babel/node": "^7.6.2",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.14.5",
     "@babel/preset-env": "^7.6.2",
     "babel-eslint": "^10.0.3",
     "eslint": "^6.5.1",
     "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-babel": "^5.3.0",
-    "eslint-plugin-import": "^2.18.2"
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "^2.2.1"
   },
   "dependencies": {
     "readline-sync": "^1.4.10"

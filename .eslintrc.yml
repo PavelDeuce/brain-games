@@ -3,11 +3,13 @@ plugins:
 
 env:
   node: true
+  es2020: true
 
 parser: babel-eslint
 
 extends:
   - 'airbnb-base'
-  
+  - 'plugin:prettier/recommended'
+
 rules:
   no-console: 0

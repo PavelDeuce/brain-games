@@ -19,6 +19,12 @@ start-brain-prime:
 start-brain-progression:
 	npx babel-node src/bin/brain-progression.js
 
+start-brain-fibonacci:
+	npx babel-node src/bin/brain-fibonacci.js
+
+start-brain-factorial:
+	npx babel-node src/bin/brain-factorial.js
+
 publish:
 	npx publish --dry -run
 

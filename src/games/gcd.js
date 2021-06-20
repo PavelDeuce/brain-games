@@ -4,11 +4,10 @@ import getRandomNumber from '../utils';
 const gameDescription = 'Find the greatest common divisor of given numbers.';
 
 const greatestCommonDivisor = (operand1, operand2) => {
-  const iter = (divisor) => (
-    ((operand1 % divisor === 0) && (operand2 % divisor === 0)) ? divisor : iter(divisor - 1)
-  );
+  const findDivisor = (divisor) =>
+    operand1 % divisor === 0 && operand2 % divisor === 0 ? divisor : findDivisor(divisor - 1);
 
-  return iter(Math.min(operand1, operand2));
+  return findDivisor(Math.min(operand1, operand2));
 };
 
 const getGameData = () => {
@@ -18,10 +17,7 @@ const getGameData = () => {
   const questionGame = `${operand1} ${operand2}`;
   const correctAnswer = greatestCommonDivisor(operand1, operand2);
 
-  return {
-    questionGame,
-    correctAnswer,
-  };
+  return { questionGame, correctAnswer };
 };
 
 export default () => {

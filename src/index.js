@@ -9,7 +9,7 @@ export default (gameDescription, getGameData) => {
   const userName = question('May I have your name? ');
   console.log(`Hello, ${userName}\n`);
 
-  const iter = (counter) => {
+  const playGameRound = (counter) => {
     if (counter === roundsCount) {
       console.log(`Congratulations, ${userName}`);
 
@@ -23,14 +23,15 @@ export default (gameDescription, getGameData) => {
     const userAnswer = question('Your answer: ');
 
     if (correctAnswer !== userAnswer) {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\n`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer is '${correctAnswer}'.\n`);
       console.log(`Let's try again, ${userName}!`);
 
       return;
     }
 
     console.log('Correct!');
-    iter(counter + 1);
+    playGameRound(counter + 1);
   };
-  iter(0);
+
+  playGameRound(0);
 };

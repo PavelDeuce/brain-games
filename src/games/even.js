@@ -8,10 +8,7 @@ const getGameData = () => {
   const questionGame = getRandomNumber(0, 100);
   const correctAnswer = getAnswerDependingCallback(isEven, questionGame);
 
-  return {
-    questionGame,
-    correctAnswer,
-  };
+  return { questionGame, correctAnswer };
 };
 
 export default () => {

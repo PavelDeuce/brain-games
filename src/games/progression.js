@@ -1,35 +1,43 @@
 import startGame from '..';
-import getRandomNumber from '../utils';
+import getRandomNumber, { getUnknownNote } from '../utils';
 
-const gameDescription = 'What number is missing in the progression?';
-const progressionLength = 10;
+const gameDescription = 'What number is missed in the progression?';
+const progressionTypes = ['arithmetic', 'geometric'];
+const progressionLength = 7;
 
-const toGenerateQuestionGame = (startNumber, step, indexOfHiddenNumber) => {
-  const iter = (progression, counter) => {
-    if (counter > progressionLength) {
-      return progression;
-    }
+const calculateProgressionItem = (startNumber, step, type, index) => {
+  const progressionTypesMap = {
+    arithmetic: startNumber + step * index,
+    geometric: startNumber * step ** index,
+  };
+  return progressionTypesMap[type] ?? null;
+};
 
-    const newItem = (counter !== indexOfHiddenNumber) ? startNumber + step * counter : '..';
+const toGenerateQuestionGame = (startNumber, step, type, indexOfHidden) => {
+  const buildProgression = (progression, counter) => {
+    if (counter > progressionLength) return progression;
+    const newItem =
+      counter !== indexOfHidden
+        ? calculateProgressionItem(startNumber, step, type, counter)
+        : getUnknownNote();
 
-    return iter([...progression, newItem], counter + 1);
+    return buildProgression([...progression, newItem], counter + 1);
   };
 
-  return iter([], 0);
+  return buildProgression([], 0);
 };
 
 const getGameData = () => {
-  const startNumber = getRandomNumber(0, 10);
-  const step = getRandomNumber(0, 30);
-  const indexOfHiddenNumber = getRandomNumber(0, progressionLength - 1);
+  const [arithmetic] = progressionTypes;
+  const type = progressionTypes[getRandomNumber(0, progressionTypes.length - 1)];
+  const startNumber = getRandomNumber(1, type === arithmetic ? 100 : 4);
+  const step = getRandomNumber(2, type === arithmetic ? 30 : 7);
+  const indexOfHidden = getRandomNumber(1, progressionLength - 1);
 
-  const questionGame = toGenerateQuestionGame(startNumber, step, indexOfHiddenNumber).join(' ');
-  const correctAnswer = (startNumber + step * indexOfHiddenNumber).toString();
+  const questionGame = toGenerateQuestionGame(startNumber, step, type, indexOfHidden).join(' ');
+  const correctAnswer = calculateProgressionItem(startNumber, step, type, indexOfHidden).toString();
 
-  return {
-    questionGame,
-    correctAnswer,
-  };
+  return { questionGame, correctAnswer };
 };
 
 export default () => {
