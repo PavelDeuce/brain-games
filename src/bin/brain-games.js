@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import { logCommands } from '../utils';
+import logCommands from '../commands';
 
-console.log('Welcome to the Brain Games!');
 logCommands();

@@ -12,7 +12,6 @@ export default (gameDescription, getGameData) => {
   const playGameRound = (counter) => {
     if (counter === roundsCount) {
       console.log(`Congratulations, ${userName}`);
-
       return;
     }
 
@@ -25,7 +24,6 @@ export default (gameDescription, getGameData) => {
     if (correctAnswer !== userAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer is '${correctAnswer}'.\n`);
       console.log(`Let's try again, ${userName}!`);
-
       return;
     }
 

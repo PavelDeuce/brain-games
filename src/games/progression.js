@@ -1,17 +1,9 @@
 import startGame from '..';
+import calculateProgressionItem, { progressionTypes } from '../math/progression';
 import getRandomNumber, { getUnknownNote } from '../utils';
 
 const gameDescription = 'What number is missed in the progression?';
-const progressionTypes = ['arithmetic', 'geometric'];
 const progressionLength = 7;
-
-const calculateProgressionItem = (startNumber, step, type, index) => {
-  const progressionTypesMap = {
-    arithmetic: startNumber + step * index,
-    geometric: startNumber * step ** index,
-  };
-  return progressionTypesMap[type] ?? null;
-};
 
 const toGenerateQuestionGame = (startNumber, step, type, indexOfHidden) => {
   const buildProgression = (progression, counter) => {
