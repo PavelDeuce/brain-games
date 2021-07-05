@@ -1,6 +1,8 @@
 # brain-games
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/d4b683a45f74dc407b49/maintainability)](https://codeclimate.com/github/PavelDeuce/frontend-project-lvl1/maintainability)[![Build Status](https://travis-ci.org/PavelDeuce/brain-games.svg?branch=master)](https://travis-ci.org/PavelDeuce/brain-games)
+[![Build Status](https://travis-ci.org/PavelDeuce/brain-games.svg?branch=master)](https://travis-ci.org/PavelDeuce/brain-games)
+[![Maintainability](https://api.codeclimate.com/v1/badges/d4b683a45f74dc407b49/maintainability)](https://codeclimate.com/github/PavelDeuce/frontend-project-lvl1/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/d4b683a45f74dc407b49/test_coverage)](https://codeclimate.com/github/PavelDeuce/frontend-project-lvl1/test_coverage)
 
 ## BrainGames install
 
