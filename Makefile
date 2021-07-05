@@ -25,6 +25,12 @@ start-brain-fibonacci:
 start-brain-factorial:
 	npx babel-node src/bin/brain-factorial.js
 
+test:
+	npm test
+
+test-coverage:
+	npm test -- --coverage
+
 publish:
 	npx publish --dry -run
 
