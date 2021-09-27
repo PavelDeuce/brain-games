@@ -40,16 +40,12 @@ describe('math', () => {
   test('fibonacci', () => {
     expect(fibonacci(1)).toBe(1);
     expect(fibonacci(2)).toBe(1);
-    expect(fibonacci(3)).toBe(2);
-    expect(fibonacci(4)).toBe(3);
-    expect(fibonacci(5)).toBe(5);
     expect(fibonacci(10)).toBe(55);
   });
 
   test('factorial', () => {
     expect(factorial(0)).toBe(1);
     expect(factorial(1)).toBe(1);
-    expect(factorial(2)).toBe(2);
     expect(factorial(3)).toBe(6);
     expect(factorial(5)).toBe(120);
     expect(factorial(7)).toBe(5040);
